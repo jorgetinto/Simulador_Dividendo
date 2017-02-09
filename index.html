@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Simula tu dividendo</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-slider.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h2 class="page_header">Simula tu dividendo</h2>
+    <p>Valor UF al día: <span id="valorUf"></span></p>
+    <span id="hiddenUf" class="hidden"></span>
+
+    <div id="alertError" class="alert alert-danger alert-dismissible" role="alert" style="display:none;">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <span id="textMuted"></span>
+    </div>
+
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Monto a financiar</label>
+        <div class="col-sm-10">
+          <input id="slideMonto" class="form-control" type="text" data-slider-min="0" data-slider-max="8000" data-slider-step="10" data-slider-value="0"/>
+          <span id="montoLiderValLabel"><span id="montoSlideVal">0</span> UF</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Plazo:</label>
+        <div class="col-sm-10">
+          <input id="slidePlazo" class="form-control" type="text" data-slider-min="0" data-slider-max="30" data-slider-step="1" data-slider-value="0"/>
+          <span id="plazoLiderValLabel"><span id="plazoSlideVal">0</span> años</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Tasa de interés:</label>
+        <div class="col-sm-10">
+          <input id="slideInteres" type="text" data-slider-min="0" data-slider-max="8.0" data-slider-step="0.1" data-slider-value="0"/>
+          <span id="interesLiderValLabel"><span id="interesSlideVal">0</span> % anual</span>
+        </div>
+      </div>
+
+      <div class="form-group" id="calculo" style="display:none;">
+        <label class="control-label col-sm-2" for="pwd">tu dividendo a :</label>
+        <div class="col-sm-8">
+         <input type="text" class="form-control" id="inputSuccess1">
+         <small class="form-text text-muted">* El valor del dividendo es referencial y no incluye los costos asociados de seguros.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-md-10">
+          <a id="calcular" class="btn btn-default">Calcular Dividendo</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.1/bootstrap-slider.min.js" ></script>
+ <script src="js/dividendo.js" ></script>
+</body>
+</html>
